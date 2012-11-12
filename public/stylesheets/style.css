@@ -1,0 +1,33 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+#app{
+    position: absolute;
+    left: 200px;
+    margin-top: 30px;
+}
+#search {
+    margin-left: 80%;
+    height: 40px;
+}
+
+#searchStart{
+    font-size: 20px;
+    height: 31px;
+}
+
+#search input {
+    float: left;
+    height: 25px;
+}
+
+.houseInfo {
+    margin-top: 10px;
+    width: 100%;
+    height: 150px;
+}
