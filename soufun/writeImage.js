@@ -10,6 +10,7 @@ houseProvider.find({},{},function(err,result){
     task.startTasks(result, {},saveImage, 0,result.length, function(){});
 });
 
+
 function saveImage(house, otherData, current, callback){
     binaryProvider.read(house.imageID, function (err, binaryData, fileType) {
         var blockImageFileName = __dirname+'/../public/images/' + house.imageID + "." + fileType.replace(/image\//, "");
