@@ -16,7 +16,7 @@ var http = require('http');
 var iconv = require('iconv-lite');
 var task = require('./task.js');
 
-task.startTasks([], {},savePage, 450,1259, function(){});
+task.startTasks([], {},savePage, 630,1259, function(){});
 
 function getHtml(index,callback){
     url = '/house/%B1%B1%BE%A9_________________'+index+'_.htm';

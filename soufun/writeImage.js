@@ -18,5 +18,9 @@ function saveImage(house, otherData, current, callback){
             }else{console.log('writeImage successful!');}
             callback();
         });
+        houseProvider.update({_id:house._id}, {$set:{"imageType":fileType.replace(/image\//, "")}}, {}, function (err, result) {
+            if (err) {console.log("pagesProvider.update err: ", err);
+            } else {console.log("pagesProvider.update result: ", result); }
+        });
     });
 }
