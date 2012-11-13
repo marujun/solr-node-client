@@ -1,17 +1,20 @@
 var http=require('http');
 var iconv = require('iconv-lite');
 
+//var userString='dataToServer='+JSON.stringify({index:5,count :10});
 var userString=JSON.stringify({index:1,count :10});
+console.log( 'req: '+userString);
 var headers = {
-    'Content-Type': 'application/x-www-form-urlencoded',
+//    'Content-Type': 'application/x-www-form-urlencoded',
+    'Content-Type': 'application/json; charset=utf-8',
     'Content-Length': userString.length
 };
 var options = {
     host: 'www.self.com.cn',
     port: 80,
     path: '/app/ps_ipnews/readhome',
-    method: 'post'
-//    ,headers: headers
+    method: 'post',
+    headers: headers
 };
 
 var req = http.request(options, function(res) {
