@@ -1,0 +1,35 @@
+<!DOCTYPE HTML >
+<html>
+<head>
+    <title>test</title>
+    <script type="text/javascript" src="javascripts/jquery/jquery-1.8.2.js"></script>
+</head>
+<script language="javascript">
+    function search() {
+        $.ajax({
+            url:'testSearch',
+            type:'post',
+            data:{words:$('#searchWord')[0].value},
+            success:function (result) {
+                console.log(result);
+                if ( result.result.length != 0) {
+                    $('.result').remove();
+                    for (var i = 0; i <  result.result.length; i++) {
+                            $('<p class="result">'+'name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' +result.result[i].name+'</br>'+'</br>'+'</br>'+
+                                    'phone:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp '+result.result[i].number+'</p></br>').appendTo('#app');
+                        }
+                } else {
+                        alert('未搜索到关于"' + $('#searchWord')[0].value + '"的内容')
+                }
+            }
+        });
+    }
+
+</script>
+<body>
+<div id="search">
+    <input id="searchWord" /><button id="searchStart" onclick="search()">搜索</button>
+</div>
+<div id="app"></div>
+</body>
+</html>

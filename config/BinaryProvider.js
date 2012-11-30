@@ -28,10 +28,13 @@ BinaryProvider.prototype.unlink = function (fileID, callback) {
 BinaryProvider.prototype.read = function (fileID, callback) {
     var gridStore = new GridStore(this.db, fileID);
     gridStore.open(function (err, gridStore) {
-        gridStore.read(function (err, binaryData) {
-            console.log("读取图片 fileID: ", fileID, gridStore.contentType);
-            callback(err, binaryData, gridStore.contentType);
-        });
+        if(err){callback(err, '', '');}
+        else{
+            gridStore.read(function (err, binaryData) {
+                console.log("读取图片 fileID: ", fileID, gridStore.contentType);
+                callback(err, binaryData, gridStore.contentType);
+            });
+        }
     });
 };
 

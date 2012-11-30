@@ -12,7 +12,7 @@
     <input id="searchWord" /><button id="searchStart" onclick="search()">搜索</button>
 </div>
 
-  <div id="app" >
+  <div id="app" title="list">
    <% for(var i=0 ;i<house.length;i++){%>
     <div class="houseInfo" >
         <div style="float:left;">
@@ -31,5 +31,35 @@
     </div>
    <% } %>
   </div>
+
+<div id="page">
+    <div class="pageButton">
+        <button id="backPage" onclick="back()">上一页</button>
+        <button id="nextPage" onclick="next()">下一页</button>
+    </div>
+    <div class="index"><p id="indexP">第1页     共<%= pages %>页</p></div>
+    <div class="detailPage">
+        <nav class="pagination">
+            <li class="page one">
+                <button id="pageone" onclick="pageDetail(1,'one')">1</button>
+            </li>
+            <li class="page" >
+                <button id="pagetwo" onclick="pageDetail(2,'two')">2</button>
+            </li>
+            <li class="page three">
+                <button id="pagethree" onclick="pageDetail(3,'three')">3</button>
+            </li>
+            <li class="page four">
+                <button id="pagefour" onclick="pageDetail(4,'four')">4</button>
+            </li>
+            <li class="page five">
+                <button id="pagefive" onclick="pageDetail(5,'five')">5</button>
+            </li>
+            <li class="page gap"><label>...</label></li>
+            <li class="page last"><button id="pagelast" onclick="pageDetail(1,'last')" value="<%= pages %>">最后一页</button></li>
+        </nav>
+
+    </div>
+</div>
 </body>
 </html>

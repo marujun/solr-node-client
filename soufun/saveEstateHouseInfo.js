@@ -16,7 +16,7 @@ var http = require('http');
 var iconv = require('iconv-lite');
 var task = require('./task.js');
 
-task.startTasks([], {},savePage, 630,1259, function(){});
+task.startTasks([], {},savePage, 724,1259, function(){});
 
 function getHtml(index,callback){
     url = '/house/%B1%B1%BE%A9_________________'+index+'_.htm';
@@ -68,6 +68,7 @@ function savePage(param, otherData, current, callback){
         if(err){console.log('when get the page '+(current+1)+' information has error :',err)}
         task.startTasks(result, {},saveHouse, 0,result.length, function(){
             callback();
+//            setTimeout(function(){callback();},10000);//搜房网对访问有限制
         });
     });
 }

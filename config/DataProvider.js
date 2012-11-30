@@ -34,6 +34,45 @@ DataProvider.prototype.find = function (selector, options, callback) {
         }
     });
 };
+DataProvider.prototype.count = function (fields, callback) {
+    this.getCollection(function (err, collection) {
+        if (err) callback(err);
+        else {
+            collection.count(fields,function(err, count) {
+                callback(err,count);
+            });
+        }
+    });
+};
+DataProvider.prototype.mapReduce = function (map, reduce, options, callback) {
+    this.getCollection(function (err, collection) {
+        if (err) callback(err);
+        else {
+            if(options.verbose){
+                collection.mapReduce(map, reduce, options, function(err, collection,stats) {
+                    callback(err,collection,stats);
+                });
+            }else{
+                collection.mapReduce(map, reduce, options, function(err, collection) {
+                    callback(err,collection);
+                });
+            }
+
+
+        }
+    });
+};
+
+DataProvider.prototype.ensureIndex = function (fields, options, callback) {
+    this.getCollection(function (err, collection) {
+        if (err) callback(err);
+        else {
+            collection.ensureIndex(fields , options, function(err, indexName) {
+                callback(err, indexName);
+            });
+        }
+    });
+};
 
 DataProvider.prototype.findOne = function (selector, options, callback) {
     this.getCollection(function (err, collection) {

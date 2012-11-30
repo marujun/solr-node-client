@@ -6,7 +6,7 @@ var binaryProvider = new BinaryProvider();
 var task = require('./task.js');
 
 var house={};
-var client = solr.createClient('124.207.0.21','8983','','/solr/soufun');
+var client = solr.createClient('192.168.1.19','8983','','/solr/soufun');
 client.autoCommit = true;
 
 houseProvider.find({},{},function(err,result){
@@ -14,16 +14,10 @@ houseProvider.find({},{},function(err,result){
 });
 
 function addSolr(param, otherData, current, callback){
-    binaryProvider.read(param.imageID, function (err, binaryData, fileType) {
-        if (err) {console.log("binaryProvider.read err: ", err);
-        } else {
-            param.imageType=fileType.replace(/image\//, "");
-            client.add(param,function(err,obj){
-                console.log(JSON.stringify(param));
-                if(err){console.log('add data to solr error: ',err);
-                }else{ callback();}
-            });
-        }
+    client.add(param,function(err,obj){
+        console.log(JSON.stringify(param));
+        if(err){console.log('add data to solr error: ',err);
+        }else{ callback();}
     });
 }
 

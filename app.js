@@ -12,7 +12,7 @@ var app = express();
 app.engine('html', require('ejs').renderFile);
 
 app.configure(function(){
-    app.set('port', process.env.PORT || 3000);
+    app.set('port', process.env.PORT || 5000);
     app.set('views', __dirname + '/views');
     app.set('view engine', 'html');
     app.use(express.favicon());
@@ -29,6 +29,9 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.post('/search', routes.search);
+app.post('/getUserByPage', routes.userPage);
+app.all('/test', routes.test);
+app.all('/testSearch', routes.testSearch);
 
 
 http.createServer(app).listen(app.get('port'), function(){

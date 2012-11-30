@@ -6,6 +6,15 @@ body {
 a {
     color: #00B7FF;
 }
+.index{
+    float: left;
+    margin-left: 20px;
+    height: 36px;
+    /*margin-top: 20px;*/
+    *display: inline;
+    /* IE7 inline-block hack */
+    *zoom: 1;
+}
 #app{
     position: absolute;
     left: 200px;
@@ -27,7 +36,78 @@ a {
 }
 
 .houseInfo {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     width: 100%;
-    height: 150px;
+    height: 130px;
+}
+
+#page{
+    /*position: absolute;*/
+    margin-left: 35%;
+    height: 40px;
+    margin-top: 1350px;
+}
+#backPage{
+    font-size: 20px;
+    height: 35px;
+}
+#nextPage{
+    font-size: 20px;
+    height: 35px;
+}
+
+.pageButton{
+    float: left;
+}
+
+/*     pages    */
+/* line 1, ../../../app/assets/stylesheets/bootstrap/paginator.css.scss */
+.detailPage{
+    display: inline-block;
+    float: left;
+    margin-left: 30px;
+    height: 36px;
+    /*margin-top: 20px;*/
+    display: inline;
+    /* IE7 inline-block hack */
+    *zoom: 1;
+}
+/* line 4, ../../../app/assets/stylesheets/bootstrap/paginator.css.scss */
+.pagination ul {
+    display: inline-block;
+    *display: inline;
+    /* IE7 inline-block hack */
+    *zoom: 1;
+    margin-left: 0;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+/* line 17, ../../../app/assets/stylesheets/bootstrap/paginator.css.scss */
+.pagination li {
+    display: inline;
+}
+/* line 19, ../../../app/assets/stylesheets/bootstrap/paginator.css.scss */
+.pagination button {
+    float: left;
+    padding: 0 14px;
+    line-height: 34px;
+    text-decoration: none;
+    border: 0 solid #ddd;
+    border-left-width: 0;
+}
+.pagination label {
+    float: left;
+    padding: 0 14px;
+    line-height: 34px;
+    text-decoration: none;
+    border-left-width: 0;
+}
+
+.pagination button:hover {
+    background-color: #f5f5f5;
 }
