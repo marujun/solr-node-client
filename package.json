@@ -6,7 +6,7 @@
       "express": "3.0.0beta7"
     , "jade": ">= 0.0.1"
     , "iconv-lite":"0.2.5"
-    , "jquery":"1.7.3"
+    , "jquery":"3.5.0"
     , "mongodb":"1.1.11"
     , "solr-client":">=0.2.3"
     , "ejs":"0.8.3"
